@@ -114,7 +114,6 @@
           </s-tree-node>
           <s-tree-node key="0-0-2" title="parent 1-2">
             <s-tree-node key="0-0-2-0" title="leaf" />
-            <s-tree-node key="0-0-2-1" title="leaf" />
           </s-tree-node>
         </s-tree-node>
       </s-tree>
