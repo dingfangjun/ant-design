@@ -90,7 +90,7 @@
             <td>大华</td>
             <td>2020-AUTO-ADD</td>
             <td>2020-03-01</td>
-            <td>陶其炜</td>
+
             <td>交警支队直属一大队</td>
             <td>
               <a-icon type="edit" :style="{ fontSize: '18px', margin: '5px' }" />
