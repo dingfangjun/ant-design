@@ -29,6 +29,7 @@ export default {
       let myChart = echarts.init(document.getElementById(this.echartId))
       // 绘制图表
       myChart.setOption({
+        backgroundColor: '#041730',
         grid: {
           left: '16%',
           bottom: '26%',
@@ -85,19 +86,107 @@ export default {
             }
           }
         },
+        // series: [
+        //   {
+        //     type: 'pictorialBar',
+        //     symbol: imgDatUrl,
+        //     barGap: 0,
+        //     barWidth: 20, //柱图宽度
+        //     symbolSize: ['100%', '100%'],
+        //     itemStyle: {
+        //       normal: {
+        //         color: '#0dce85'
+        //       }
+        //     },
+        //     data: ydata
+        //   }
+        // ]
+
         series: [
           {
-            type: 'pictorialBar',
-            symbol: imgDatUrl,
-            barGap: 0,
-            barWidth: 20, //柱图宽度
-            symbolSize: ['100%', '100%'],
+            name: 'a',
+            tooltip: {
+              show: false
+            },
+            type: 'bar',
+            barWidth: 16,
             itemStyle: {
               normal: {
-                color: '#0dce85'
+                color: new echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: '#0B4EC3' // 0% 处的颜色
+                    },
+                    {
+                      offset: 0.6,
+                      color: '#138CEB' // 60% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: '#17AAFE' // 100% 处的颜色
+                    }
+                  ],
+                  false
+                )
               }
             },
+            data: ydata,
+            barGap: 0
+          },
+          {
+            type: 'bar',
+            barWidth: 16,
+            itemStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: '#09337C' // 0% 处的颜色
+                    },
+                    {
+                      offset: 0.6,
+                      color: '#0761C0' // 60% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: '#0575DE' // 100% 处的颜色
+                    }
+                  ],
+                  false
+                )
+              }
+            },
+            barGap: 0,
             data: ydata
+          },
+          {
+            name: 'b',
+            tooltip: {
+              show: false
+            },
+            type: 'pictorialBar',
+            itemStyle: {
+              borderWidth: 1,
+              borderColor: '#999999',
+              color: '#084ca5'
+            },
+            symbol: 'path://M 0,0 l 60,60 l -60,60 l -60,-60 z',
+            symbolSize: ['30', '20'],
+            symbolOffset: ['0', '-11'],
+            //symbolRotate: -5,
+            symbolPosition: 'end',
+            data: ydata,
+            z: 3
           }
         ]
       })
