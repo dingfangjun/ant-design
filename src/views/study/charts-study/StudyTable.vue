@@ -32,6 +32,7 @@
 </template>
 
 <script>
+const screenLog = require('@/utils/screenLog')
 const columns = [
   {
     title: '日期',
@@ -113,6 +114,7 @@ export default {
     }
   },
   mounted: function() {
+    screenLog.printANSI()
     /*  var _this = this
     // this.handleChange(value)
     this.axios
